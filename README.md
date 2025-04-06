@@ -61,7 +61,7 @@ su - yogesh -c 'export
 [your_login_command_here] << 'EOF'
 su - [your_username_here] -c 'export
 
-To run as root, simply remove the line that starts with su -.
+**To run as root, simply remove the line that starts with su -.**
 
 
 ---
@@ -103,7 +103,7 @@ You are free to use, modify, and distribute it with proper attribution.
 
 ## **📜Credits**
 
-Created and maintained by mikey-7x
+Developed by **[mikey-7x](https://github.com/mikey-7x)** 🚀🔥  
 
 Thanks to the developers of Termux, Termux-X11, PulseAudio, XFCE4, UDroid, and the open-source Linux community
 
