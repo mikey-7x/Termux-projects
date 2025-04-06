@@ -25,7 +25,7 @@ After editing the script (see Step 2 below), run:
 
 ## **Step-by-Step Manual Setup**
 
-**Step 1: Install Required Packages**
+- **Step 1: Install Required Packages**
 
 **In Termux:**
 
@@ -39,9 +39,7 @@ pkg install pulseaudio
 apt update && apt install -y xfce4 dbus-x11 x11-xserver-utils
 
 
----
-
-**Step 2: Download and Edit the Script**
+- **Step 2: Download and Edit the Script**
 
 **Download the script manually:**
 
@@ -64,23 +62,19 @@ su - [your_username_here] -c 'export
 **To run as root, simply remove the line that starts with su -.**
 
 
----
-
-**Step 3: Make the Script Executable**
+- **Step 3: Make the Script Executable**
 
 chmod +x p1.sh
 
 
----
-
-**Step 4: Run the Script**
+- **Step 4: Run the Script**
 
 ./p1.sh
 
 
 ---
 
-**Important Notes**
+**If any error occurrs run below commands**
 
 In a separate Termux session, run:
 
