@@ -74,7 +74,7 @@ chmod +x p1.sh
 
 ---
 
-**If any error occurrs run below commands**
+**⚙️If any error occurrs run below commands**
 
 In a separate Termux session, run:
 
