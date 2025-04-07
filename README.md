@@ -29,10 +29,7 @@ After editing the script (see Step 2 below), run:
 
 **In Termux:**
 
-pkg update
-pkg install x11-repo
-pkg install termux-x11-nightly
-pkg install pulseaudio
+pkg update && pkg install x11-repo termux-x11-nightly pulseaudio
 
 **In your Linux distribution (Ubuntu, Kali, etc.):**
 
