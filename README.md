@@ -82,20 +82,19 @@ su - [your_username_here] -c 'export
 
 **To run as root, simply remove the "su - yogesh -c" in p1.sh script**
 
-
-- **Step 3: Make the Script Executable**
+**🦞Step 3: Make the Script Executable**
 
 ```
 chmod +x p1.sh
 ```
 
-- **Step 4: Run the Script**
+**🦞Step 4: Run the Script**
 
 ```
 ./p1.sh
 ```
 ---
-## ** For Kali-Nethunter (rootless)
+## ** For Kali-Nethunter (rootless)**
 All procedure is same as above mentioned but add some extra steps to set-up Kali-Nethunter with xfce4 in termux-x11 gui
 
 In termux run:
@@ -113,20 +112,6 @@ After all process run Kali-Nethunter with gui by command "
 ./p1.sh
 ```
 ---
-
-**⚙️If any error occurrs run below commands**
-
-In a separate Termux session, run:
-
-termux-x11 :0
-
-Then start PulseAudio in Termux:
-
-pulseaudio --start
-
-
----
-
 ## **📜License**
 
 This project is licensed under the 
