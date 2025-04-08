@@ -29,21 +29,16 @@ After editing the script (see Step 2 below), run:
 
 **In Termux:**
 
+```
 pkg update
-
 pkg upgrade
-
 pkg install x11-repo
-
 pkg install termux-x11-nightly
-
 pkg install tur-repo
-
 pkg install pulseaudio
-
 pkg install wget
-
 pkg install git
+```
 
 **In your Linux distribution (Ubuntu, Kali, etc.):**
 
@@ -55,7 +50,7 @@ apt update && apt install -y xfce4 dbus-x11 x11-xserver-utils
 Run below command in termux and remove "#" from "#allow-external-apps = true" line
 
 ```bash
-. <(nano ~/.termux/termux.properties)
+nano ~/.termux/termux.properties
 ```
 
 **Download the script manually:**
