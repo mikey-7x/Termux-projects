@@ -25,7 +25,7 @@ After editing the script (see Step 2 below), run:
 
 ## **Step-by-Step Manual Setup**
 
-- **Step 1: Install Required Packages**
+**🦞Step 1: Install Required Packages**
 
 **In Termux:**
 
@@ -50,7 +50,11 @@ pkg install git
 apt update && apt install -y xfce4 dbus-x11 x11-xserver-utils
 
 
-- **Step 2: Download and Edit the Script**
+**🦞Step 2: Download and Edit the Script**
+
+Run below command in termux and remove "#" from "#allow-external-apps = true" line
+
+nano ~/.termux/termux.properties
 
 **Download the script manually:**
 
