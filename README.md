@@ -80,7 +80,7 @@ su - yogesh -c 'export
 [your_login_command_here] << 'EOF'
 su - [your_username_here] -c 'export
 
-**To run as root, simply remove the line that starts with su -.**
+**To run as root, simply remove the "su - yogesh -c" in p1.sh script**
 
 
 - **Step 3: Make the Script Executable**
