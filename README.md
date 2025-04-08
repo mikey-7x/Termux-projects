@@ -94,7 +94,24 @@ chmod +x p1.sh
 ```
 ./p1.sh
 ```
+---
+## ** For Kali-Nethunter (rootless)
+All procedure is same as above mentioned but add some extra steps to set-up Kali-Nethunter with xfce4 in termux-x11 gui
 
+In termux run:
+```sh
+nano $PREFIX/bin/nh
+```
+Find "/dev" line and after this line add below command:
+```sh
+-b /data/data/com.termux/files/usr/tmp:/tmp \
+```
+Then press "ctrl+x" button in keyboard then press  "enter "
+
+After all process run Kali-Nethunter with gui by command "
+```sh
+./p1.sh
+```
 ---
 
 **⚙️If any error occurrs run below commands**
