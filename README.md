@@ -107,7 +107,7 @@ Find "/dev" line and after this line add below command:
 ```
 Then press "ctrl+x" button in keyboard then press  "enter "
 
-After all process run Kali-Nethunter with gui by command "
+After all process run Kali-Nethunter with gui by command:
 ```sh
 ./p1.sh
 ```
