@@ -14,11 +14,15 @@ This project lets you run a full desktop Linux environment (XFCE4) inside Termux
 
 ## **Quick One-Liner to Download and Execute:**
 
+```
 curl -O https://raw.githubusercontent.com/mikey-7x/Termux-projects/main/p1.sh && chmod +x p1.sh && nano p1.sh
+```
 
 After editing the script (see Step 2 below), run:
 
+```
 ./p1.sh
+```
 
 
 ---
@@ -42,24 +46,29 @@ pkg install git
 
 **In your Linux distribution (Ubuntu, Kali, etc.):**
 
+```
 apt update && apt install -y xfce4 dbus-x11 x11-xserver-utils
-
+```
 
 **🦞Step 2: Download and Edit the Script**
 
 Run below command in termux and remove "#" from "#allow-external-apps = true" line
 
-```bash
+```
 nano ~/.termux/termux.properties
 ```
 
 **Download the script manually:**
 
+```
 wget https://raw.githubusercontent.com/mikey-7x/Termux-projects/main/p1.sh
+```
 
 Edit the script:
 
+```
 nano p1.sh
+```
 
 Replace the following lines:
 
@@ -76,13 +85,15 @@ su - [your_username_here] -c 'export
 
 - **Step 3: Make the Script Executable**
 
+```
 chmod +x p1.sh
-
+```
 
 - **Step 4: Run the Script**
 
+```
 ./p1.sh
-
+```
 
 ---
 
