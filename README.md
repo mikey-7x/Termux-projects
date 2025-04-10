@@ -128,7 +128,7 @@ chmod +x pd.sh
 --- 
 
 ## **For Kali-Nethunter (rootless)**
-All procedure is same as above mentioned but add some extra steps to set-up Kali-Nethunter with xfce4 in termux-x11 gui
+All procedure is same as above mentioned steps (install "p2.sh" script) but add some extra steps to set-up Kali-Nethunter with xfce4 in termux-x11 gui
 
 **🦞In termux run:**
 
