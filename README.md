@@ -99,27 +99,27 @@ chmod +x p1.sh
 
 ## **For proot-distro distributions:**
 
-**install script**
+**🦞install script**
 ```
 curl -O https://raw.githubusercontent.com/mikey-7x/Termux-projects/main/pd.sh
 ```
 
-**open script**
+**🦞open script**
 ```
 nano pd.sh
 ```
 
-**replace "ubuntu" from your login id of linux distribution in above line in script**
+**🦞replace "ubuntu" from your login id of linux distribution in below line in script**
 
 ubuntu <<'EOL'
 
 
-**give permission**
+**🦞give permission**
 ```
 chmod +x pd.sh
 ```
 
-**execute script**
+**🦞execute script**
 ```
 ./pd.sh
 ```
@@ -129,17 +129,22 @@ chmod +x pd.sh
 ## **For Kali-Nethunter (rootless)**
 All procedure is same as above mentioned but add some extra steps to set-up Kali-Nethunter with xfce4 in termux-x11 gui
 
-In termux run:
+**🦞In termux run:**
+
 ```sh
 nano $PREFIX/bin/nh
 ```
-Find "/dev" line and after this line add below command:
+
+**🦞Find "/dev" line and after this line add below command:**
+
 ```sh
 -b /data/data/com.termux/files/usr/tmp:/tmp \
 ```
-Then press "ctrl+x" button in keyboard then press  "enter "
 
-After all process run Kali-Nethunter with gui by command:
+**Then press "ctrl+x" button in keyboard then press  "enter "**
+
+**🦞After all process run Kali-Nethunter with gui by command:**
+
 ```sh
 ./p1.sh
 ```
