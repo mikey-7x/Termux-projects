@@ -51,7 +51,7 @@ pkg install git
 apt update && apt install -y xfce4 dbus-x11 x11-xserver-utils
 ```
 
-**🦞Step 2: Download and Edit the Script**
+**🦞Step 2: Setup the termux**
 
 Run below command in termux and remove "#" from "#allow-external-apps = true" line
 
@@ -59,7 +59,7 @@ Run below command in termux and remove "#" from "#allow-external-apps = true" li
 nano ~/.termux/termux.properties
 ```
 
-**Download the script manually:**
+**🦞Step-3: Download the script manually:**
 
 ```
 wget https://raw.githubusercontent.com/mikey-7x/Termux-projects/main/p1.sh
@@ -85,13 +85,13 @@ su - [your_username_here] -c 'export
 
 **To run as root, simply remove the "su - yogesh -c" in p1.sh script**
 
-**🦞Step 3: Make the Script Executable**
+**🦞Step 4: Make the Script Executable**
 
 ```
 chmod +x p1.sh
 ```
 
-**🦞Step 4: Run the Script**
+**Run the Script**
 
 ```
 ./p1.sh
@@ -99,6 +99,8 @@ chmod +x p1.sh
 ---
 
 ## **For proot-distro's distributions:**
+
+**Step-1&2 is same and is mensioned above**
 
 **🦞install script**
 ```
@@ -128,7 +130,8 @@ chmod +x pd.sh
 --- 
 
 ## **For Kali-Nethunter (rootless)**
-All procedure is same as above mentioned steps (install "p2.sh" script) but add some extra steps to set-up Kali-Nethunter with xfce4 in termux-x11 gui
+
+All procedure is same as above mentioned steps (process the Step-1,2,3,4) but add some extra steps to set-up Kali-Nethunter with xfce4 in termux-x11 gui
 
 **🦞In termux run:**
 
