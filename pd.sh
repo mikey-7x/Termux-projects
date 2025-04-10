@@ -17,7 +17,7 @@ sleep 3
 am start --user 0 -n com.termux.x11/com.termux.x11.MainActivity >/dev/null 2>&1
 sleep 1
 
-# Start Ubuntu (installed via MaheshTechnicals script)
+# Start Ubuntu (i'm installed via MaheshTechnicals script)
 # This assumes you're inside the Termux home directory and have startubuntu.sh ready
 # Set DISPLAY and PULSE environment variables and run XFCE inside Ubuntu
 ubuntu <<'EOL'
