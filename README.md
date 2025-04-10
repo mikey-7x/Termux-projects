@@ -98,7 +98,7 @@ chmod +x p1.sh
 ```
 ---
 
-## **For proot-distro distributions:**
+## **For proot-distro's distributions:**
 
 **🦞install script**
 ```
