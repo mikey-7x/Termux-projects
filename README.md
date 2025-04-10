@@ -63,6 +63,11 @@ nano ~/.termux/termux.properties
 ```
 wget https://raw.githubusercontent.com/mikey-7x/Termux-projects/main/p1.sh
 ```
+**For proot-distro distributions:"
+
+```
+curl -O https://raw.githubusercontent.com/mikey-7x/Termux-projects/main/pd.sh
+```
 
 Edit the script:
 
