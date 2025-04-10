@@ -63,11 +63,8 @@ nano ~/.termux/termux.properties
 ```
 wget https://raw.githubusercontent.com/mikey-7x/Termux-projects/main/p1.sh
 ```
-**For proot-distro distributions:"
 
-```
-curl -O https://raw.githubusercontent.com/mikey-7x/Termux-projects/main/pd.sh
-```
+
 
 Edit the script:
 
@@ -99,6 +96,22 @@ chmod +x p1.sh
 ./p1.sh
 ```
 ---
+
+## **For proot-distro distributions:**
+
+**install script**
+```
+curl -O https://raw.githubusercontent.com/mikey-7x/Termux-projects/main/pd.sh
+```
+**open script**
+```
+nano pd.sh
+```
+**replace "ubuntu" from your login id of linux distribution in above line in script**
+```
+
+```
+
 ## **For Kali-Nethunter (rootless)**
 All procedure is same as above mentioned but add some extra steps to set-up Kali-Nethunter with xfce4 in termux-x11 gui
 
