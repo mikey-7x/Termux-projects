@@ -53,7 +53,7 @@ apt update && apt install -y xfce4 dbus-x11 x11-xserver-utils
 
 **🦞Step 2: Setup the termux**
 
-Run below command in termux and remove "#" from "#allow-external-apps = true" line
+Run below command in termux and remove "#" from "#allow-external-apps = true" line in the script 
 
 ```
 nano ~/.termux/termux.properties
