@@ -25,7 +25,6 @@ After editing the script (see Step 2 below), run:
 ./p1.sh
 ```
 
-
 ---
 
 ## **Step-by-Step Manual Setup**
@@ -64,8 +63,6 @@ nano ~/.termux/termux.properties
 ```
 wget https://raw.githubusercontent.com/mikey-7x/Termux-projects/main/p1.sh
 ```
-
-
 
 Edit the script:
 
@@ -124,11 +121,13 @@ nano pd2.sh
 
 ubuntu <<'EOL'
 
-**For pd2.sh script:**replace "proot-distro login ubuntu" with your login id and replace "ubuntu" with your user id in below line of script👇
+**For pd2.sh script:**
+replace "proot-distro login ubuntu" with your login id and replace "ubuntu" with your user id in below line of script👇
 
 proot-distro login ubuntu --shared-tmp -- /bin/bash -c  'export PULSE_SERVER=127.0.0.1 && export XDG_RUNTIME_DIR=${TMPDIR} && su - ubuntu -c "env DISPLAY=:0 startxfce4"'
 
-exit 0                                                       
+exit 0        
+
 **🦞give permission**
 ```
 chmod +x pd.sh
@@ -137,6 +136,7 @@ chmod +x pd.sh
 ```
 chmod +x pd2.sh
 ```
+
 **🦞execute script**
 ```
 ./pd.sh
@@ -171,12 +171,12 @@ nano $PREFIX/bin/nh
 ./p1.sh
 ```
 ---
+
 ## **📜License**
 
 This project is licensed under the 
 [MIT License](LICENSE).
 You are free to use, modify, and distribute it with proper attribution.
-
 
 ---
 
