@@ -106,27 +106,42 @@ chmod +x p1.sh
 ```
 curl -O https://raw.githubusercontent.com/mikey-7x/Termux-projects/main/pd.sh
 ```
+**OR**
+```
+curl -O https://raw.githubusercontent.com/mikey-7x/Termux-projects/main/pd2.sh
+```
 
 **🦞open script**
 ```
 nano pd.sh
+```
+**OR**
+```
+nano pd2.sh
 ```
 
 **🦞replace "ubuntu" from your login id of linux distribution in below line in script**
 
 ubuntu <<'EOL'
 
+**For pd2.sh script:**
 
 **🦞give permission**
 ```
 chmod +x pd.sh
 ```
-
+**OR**
+```
+chmod +x pd2.sh
+```
 **🦞execute script**
 ```
 ./pd.sh
 ```
-
+**OR**
+```
+./pd2.sh
+```
 --- 
 
 ## **For Kali-Nethunter (rootless)**
