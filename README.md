@@ -151,6 +151,8 @@ chmod +x pd2.sh
 
 All procedure is same as above mentioned steps (process the Step-1,2,3,4) but add some extra steps to set-up Kali-Nethunter with xfce4 in termux-x11 gui
 
+for Kali-Nethunter "p1.sh" script is working perfectly with sound 
+
 **🦞In termux run:**
 
 ```sh
