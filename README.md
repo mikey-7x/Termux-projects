@@ -124,8 +124,11 @@ nano pd2.sh
 
 ubuntu <<'EOL'
 
-**For pd2.sh script:**
+**For pd2.sh script:**replace "proot-distro login ubuntu" with your login id and replace "ubuntu" with your user id in below line of script👇
 
+proot-distro login ubuntu --shared-tmp -- /bin/bash -c  'export PULSE_SERVER=127.0.0.1 && export XDG_RUNTIME_DIR=${TMPDIR} && su - ubuntu -c "env DISPLAY=:0 startxfce4"'
+
+exit 0                                                       
 **🦞give permission**
 ```
 chmod +x pd.sh
