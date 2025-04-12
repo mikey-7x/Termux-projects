@@ -28,7 +28,7 @@ After editing the script (see Step 2 below), run:
 
 ## **Step-by-Step Manual Setup**
 
-**🦞Step 1: Install Required Packages**
+- **Step 1: Install Required Packages**
 
 **In Termux:**
 
@@ -49,7 +49,7 @@ pkg install git
 apt update && apt install -y xfce4 dbus-x11 x11-xserver-utils
 ```
 
-**🦞Step 2: Setup the termux**
+- **Step 2: Setup the termux**
 
 Run below command in termux and remove "#" from "#allow-external-apps = true" line in the script 
 
@@ -57,7 +57,7 @@ Run below command in termux and remove "#" from "#allow-external-apps = true" li
 nano ~/.termux/termux.properties
 ```
 
-**🦞Step-3: Download the script manually:**
+- **Step-3: Download the script manually:**
 
 ```
 wget https://raw.githubusercontent.com/mikey-7x/Termux-projects/main/p1.sh
@@ -81,7 +81,7 @@ su - [your_username_here] -c 'export
 
 **To run as root, simply remove the "su - yogesh -c" in p1.sh script**
 
-**🦞Step 4: Make the Script Executable**
+- **Step 4: Make the Script Executable**
 
 ```
 chmod +x p1.sh
