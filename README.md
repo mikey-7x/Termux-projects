@@ -2,13 +2,6 @@
 
 A collection of practical and powerful Termux-based projects to extend your Android capabilities using Linux distributions, GUIs, automation scripts, and more!
 
-**New:**
-I added a new script namely "pd2sd.sh" which access external sd card in your linux 
-
-simply copy your sd card path and replace this path with "/storage/67FE-7DD2:/mnt/sdcard_ext "in below line of the script
-
---bind /storage/67FE-7DD2:/mnt/sdcard_ext \
-
 ---
 
 ## **[Project-1]:**
@@ -178,6 +171,22 @@ nano $PREFIX/bin/nh
 ```sh
 ./p1.sh
 ```
+---
+
+**💥New:**
+I added a new script namely "pd2sd.sh" which access external sd card in your linux 
+
+simply copy your sd card path and replace this path with "/storage/67FE-7DD2:/mnt/sdcard_ext "in below line of the script
+
+--bind /storage/67FE-7DD2:/mnt/sdcard_ext \
+
+**Note🦞that:**
+In edit the script for putting your login id, make sure add original login id (like "proot-distro login ubuntu") not a alias and then add your user id.
+
+In all my script the "pd2sd.sh" is is well designed and worked well for proot-distro's distributions 💯.
+
+The first script "p1.sh" is directly work with alias or your any login id.
+
 ---
 
 ## **📜License**
