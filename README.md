@@ -4,7 +4,7 @@ A collection of practical and powerful Termux-based projects to extend your Andr
 
 ---
 
-## **🔥🔥🔥[Project-1]:🔥🔥🔥**
+## **🔥[Project-1]:🔥**
 **Run Any Linux Distribution with XFCE4 in Termux-X11 GUI (with Working Sound)**
 
 This project lets you run a full desktop Linux environment (XFCE4) inside Termux on Android with GUI and working audio using Termux-X11.
