@@ -176,7 +176,7 @@ nano $PREFIX/bin/nh
 **💥New:**
 I added a new script namely "pd2sd.sh" which access external sd card in your linux 
 
-simply copy your sd card path and replace this path with "/storage/67FE-7DD2:/mnt/sdcard_ext "in below line of the script
+simply copy your sd card path and replace this path with "/storage/67FE-7DD2:"in below line of the script
 
 --bind /storage/67FE-7DD2:/mnt/sdcard_ext \
 
