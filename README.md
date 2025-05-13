@@ -33,14 +33,15 @@ After editing the script (see Step 2 below), run:
 **In Termux:**
 
 ```
-pkg update
-pkg upgrade
-pkg install x11-repo
-pkg install termux-x11-nightly
-pkg install tur-repo
-pkg install pulseaudio
-pkg install wget
-pkg install git
+termux-setup-storage
+pkg update && pkg upgrade -y
+pkg install wget -y
+pkg install git -y
+pkg install tur-repo -y
+pkg install x11-repo -y
+pkg install termux-x11-nightly -y
+pkg install pulseaudio -y
+pkg install curl -y
 ```
 
 **In your Linux distribution (Ubuntu, Kali, etc.):**
