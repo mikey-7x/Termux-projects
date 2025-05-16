@@ -47,7 +47,7 @@ pkg install curl -y
 **In your Linux distribution (Ubuntu, Kali, etc.):**
 
 ```
-apt update && apt install -y xfce4 dbus-x11 x11-xserver-utils
+sudo apt update && apt install -y xfce4 dbus-x11 x11-xserver-utils
 ```
 
 - **Step 2: Setup the termux**
