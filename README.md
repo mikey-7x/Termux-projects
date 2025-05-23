@@ -234,13 +234,16 @@ cd /home/mikey
 
 🔗 replace "/home/mikey" with your default path for your user login id
 
-**step-2**press "ctrl+x" & "y" and "Enter"
+**step-2:** press "ctrl+x" & "y" and "Enter"
 
 **step-3:** run this in termux 
 ```
 source ~/.bashrc
 ```
-**(only for Ubuntu installed through udroid, this path is different for different linux distributions)step-4:**run in termux 
+**step-4:** run in termux 
+
+**(only for Ubuntu installed through udroid, this path is different for different linux distributions)**
+
 ```
 nano /data/data/com.termux/files/usr/var/lib/udroid/installed-filesystems/udroid-jammy-xfce4/udroid_proot_mounts
 ```
