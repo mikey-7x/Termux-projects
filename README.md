@@ -261,6 +261,11 @@ then save it using press "ctrl+x" & "y" and "Enter"
 ```
 chmod 644 /data/data/com.termux/files/usr/var/lib/udroid/installed-filesystems/udroid-jammy-xfce4/udroid_proot_mounts
 ```
+**step-5:** run your distribution through typing alias in termux (which can be edited in first line of step-1)
+
+```
+mikey
+```
 
 ## **📜License**
 
