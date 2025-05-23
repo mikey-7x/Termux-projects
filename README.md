@@ -190,6 +190,65 @@ The first script "p1.sh" is directly work with alias or your any login id.
 
 ---
 
+## **🔥[Project-2]🔥**
+**Access internal storage in any linux distributions in the termux on android phone**
+
+---
+
+**step-1:** make short cut of your login id in the termux 
+
+```
+nano ~/.bashrc
+```
+add
+```
+alias mikey="udroid login jammy:xfce4 su mikey"
+if [ ! -d ~/storage ]; then
+    mkdir -p ~/storage
+    ln -s /storage/emulated/0 ~/storage/shared
+    ln -s /storage/emulated/0/Download ~/storage/downloads
+    ln -s /storage/emulated/0/DCIM ~/storage/dcim
+    ln -s /storage/emulated/0/Movies ~/storage/movies
+    ln -s /storage/emulated/0/Music ~/storage/music
+    ln -s /storage/emulated/0/Pictures ~/storage/pictures
+else
+    [ ! -e ~/storage/shared ] && ln -s /storage/emulated/0 ~/storage/shared
+    [ ! -e ~/storage/downloads ] && ln -s /storage/emulated/0/Download ~/storage/downloads
+    [ ! -e ~/storage/dcim ] && ln -s /storage/emulated/0/DCIM ~/storage/dcim
+    [ ! -e ~/storage/movies ] && ln -s /storage/emulated/0/Movies ~/storage/movies
+    [ ! -e ~/storage/music ] && ln -s /storage/emulated/0/Music ~/storage/music
+    [ ! -e ~/storage/pictures ] && ln -s /storage/emulated/0/Pictures ~/storage/pictures
+fi
+cd /home/mikey
+```
+**edit:**
+1)in first line (alias mikey="udroid login jammy:xfce4 su mikey"),
+
+🔗"mikey" after alias text is variable you can change it which can be used to login your distribution 
+🔗replace "udroid login jammy:xfce4" with your root login id
+🔗 replace "mikey" in "su mikey" with your user login id
+
+2)in the last line (cd /home/mikey),
+🔗 replace "/home/mikey" with your default path for your user login id
+
+**step-2**press "ctrl+x" & "y" and "Enter"
+
+**step-3:** run this in termux 
+```
+source ~/.bashrc
+```
+**(only for Ubuntu installed through udroid, this path is different for different linux distributions)step-4:**run in termux 
+```
+nano /data/data/com.termux/files/usr/var/lib/udroid/installed-filesystems/udroid-jammy-xfce4/udroid_proot_mounts
+```
+add this:
+```
+storage/emulated/0:/storage/emulated/0
+/sdcard:/sdcard
+/data/data/com.termux/files/home:/home/mikey/
+```
+then save it using press "ctrl+x" & "y" and "Enter"
+
 ## **📜License**
 
 This project is licensed under the 
