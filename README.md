@@ -222,6 +222,7 @@ fi
 cd /home/mikey
 ```
 **edit:**
+
 1)in first line (alias mikey="udroid login jammy:xfce4 su mikey"),
 
 🔗"mikey" after alias text is variable you can change it which can be used to login your distribution 
