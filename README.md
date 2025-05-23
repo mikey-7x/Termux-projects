@@ -255,6 +255,12 @@ storage/emulated/0:/storage/emulated/0
 ```
 then save it using press "ctrl+x" & "y" and "Enter"
 
+**Give execution permission:**
+
+```
+chmod 644 /data/data/com.termux/files/usr/var/lib/udroid/installed-filesystems/udroid-jammy-xfce4/udroid_proot_mounts
+```
+
 ## **📜License**
 
 This project is licensed under the 
