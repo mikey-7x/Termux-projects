@@ -200,7 +200,7 @@ The first script "p1.sh" is directly work with alias or your any login id.
 ```
 nano ~/.bashrc
 ```
-add
+add:
 ```
 alias mikey="udroid login jammy:xfce4 su mikey"
 if [ ! -d ~/storage ]; then
@@ -225,10 +225,13 @@ cd /home/mikey
 1)in first line (alias mikey="udroid login jammy:xfce4 su mikey"),
 
 🔗"mikey" after alias text is variable you can change it which can be used to login your distribution 
+
 🔗replace "udroid login jammy:xfce4" with your root login id
+
 🔗 replace "mikey" in "su mikey" with your user login id
 
 2)in the last line (cd /home/mikey),
+
 🔗 replace "/home/mikey" with your default path for your user login id
 
 **step-2**press "ctrl+x" & "y" and "Enter"
