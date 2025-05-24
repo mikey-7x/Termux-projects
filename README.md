@@ -231,7 +231,8 @@ else
     [ ! -e ~/storage/music ] && ln -s /storage/emulated/0/Music ~/storage/>
     [ ! -e ~/storage/pictures ] && ln -s /storage/emulated/0/Pictures ~/st>
 fi
-cd /home/mikey
+
+[ -d /home/mikey ] && cd /home/mikey
 ```
 **edit:**
 
