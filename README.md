@@ -203,6 +203,18 @@ nano ~/.bashrc
 add:
 ```
 alias mikey="udroid login jammy:xfce4 su mikey"
+
+# Enable colored prompt
+force_color_prompt=yes
+
+if [ -n "$force_color_prompt" ]; then
+    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+        PS1='\033[01;32m\u@\h:\w\$ \033[00m'
+    else
+        PS1='\u@\h:\w\$ '
+    fi
+fi
+
 if [ ! -d ~/storage ]; then
     mkdir -p ~/storage
     ln -s /storage/emulated/0 ~/storage/shared
@@ -213,11 +225,11 @@ if [ ! -d ~/storage ]; then
     ln -s /storage/emulated/0/Pictures ~/storage/pictures
 else
     [ ! -e ~/storage/shared ] && ln -s /storage/emulated/0 ~/storage/shared
-    [ ! -e ~/storage/downloads ] && ln -s /storage/emulated/0/Download ~/storage/downloads
-    [ ! -e ~/storage/dcim ] && ln -s /storage/emulated/0/DCIM ~/storage/dcim
-    [ ! -e ~/storage/movies ] && ln -s /storage/emulated/0/Movies ~/storage/movies
-    [ ! -e ~/storage/music ] && ln -s /storage/emulated/0/Music ~/storage/music
-    [ ! -e ~/storage/pictures ] && ln -s /storage/emulated/0/Pictures ~/storage/pictures
+    [ ! -e ~/storage/downloads ] && ln -s /storage/emulated/0/Download ~/s>
+    [ ! -e ~/storage/dcim ] && ln -s /storage/emulated/0/DCIM ~/storage/dc>
+    [ ! -e ~/storage/movies ] && ln -s /storage/emulated/0/Movies ~/storag>
+    [ ! -e ~/storage/music ] && ln -s /storage/emulated/0/Music ~/storage/>
+    [ ! -e ~/storage/pictures ] && ln -s /storage/emulated/0/Pictures ~/st>
 fi
 cd /home/mikey
 ```
