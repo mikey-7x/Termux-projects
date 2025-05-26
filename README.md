@@ -274,20 +274,8 @@ then save it using press "ctrl+x" & "y" and "Enter"
 ```
 chmod 644 /data/data/com.termux/files/usr/var/lib/udroid/installed-filesystems/udroid-jammy-xfce4/udroid_proot_mounts
 ```
-**step-5:** create symlink
 
-make shell script:
-```
-mikey.sh
-```
-past this:
-```
-#!/data/data/com.termux/files/usr/bin/bash
-proot --link2symlink -0 -b /storage/emulated/0:/storage/emulated/0 -b /sdcard:/sdcard -b /data/data/com.termux/files/home:/home/mikey /data/data/com.termux/files/usr/bin/udroid login jammy:xfce4 su mikey
-```
-save it:'ctrl+x' & 'y' then 'Enter'
-
-**step-6:** run your distribution through typing alias in termux (which can be edited in first line of step-1) in my case it is:
+**step-5:** run your distribution through typing alias in termux (which can be edited in first line of step-1) in my case it is:
 
 ```
 mikey
