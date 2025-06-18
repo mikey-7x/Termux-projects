@@ -239,6 +239,7 @@ fi
 
 [ -d /home/mikey ] && cd /home/mikey
 ```
+
 **for Archlinux:**
 
 ```
@@ -279,6 +280,26 @@ source ~/.bashrc
 ```
 mikey
 ```
+**step-4:**after this create accessible file folder 
+
+```
+mkdir -p ~/storage
+
+ln -sf /data/data/com.termux/files/home/storage/shared    ~/storage/shared
+ln -sf /data/data/com.termux/files/home/storage/downloads ~/storage/downloads
+ln -sf /data/data/com.termux/files/home/storage/dcim      ~/storage/dcim
+ln -sf /data/data/com.termux/files/home/storage/music     ~/storage/music
+ln -sf /data/data/com.termux/files/home/storage/movies    ~/storage/movies
+ln -sf /data/data/com.termux/files/home/storage/pictures  ~/storage/pictures
+```
+
+then run if you want to more simple setup:
+
+```
+rm -rf ~/storage  # remove the whole folder safely
+ln -sf /data/data/com.termux/files/home/storage/shared ~/storage
+```
+**Now we are able to access all android's internal storage in your linux distributions in the termux**
 
 **Note:** make sure you can choose any alias for login your id but i put same alias as my login id (which is mikey for my case only) 
 
