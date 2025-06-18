@@ -239,15 +239,29 @@ fi
 
 [ -d /home/mikey ] && cd /home/mikey
 ```
+**for Archlinux:**
+
+```
+alias mikey='proot-distro login archlinux --user mikey'
+mkdir -p ~/storage
+
+ln -sf /data/data/com.termux/files/home/storage/shared    ~/storage/shared
+ln -sf /data/data/com.termux/files/home/storage/downloads ~/storage/downloads
+ln -sf /data/data/com.termux/files/home/storage/dcim      ~/storage/dcim
+ln -sf /data/data/com.termux/files/home/storage/music     ~/storage/music
+ln -sf /data/data/com.termux/files/home/storage/movies    ~/storage/movies
+ln -sf /data/data/com.termux/files/home/storage/pictures  ~/storage/pictures
+```
+
 **edit:**
 
-1)in first line (alias mikey="udroid login jammy:xfce4 su mikey"),
+1)in first line (alias mikey="udroid login jammy:xfce4 su mikey")/(alias mikey='proot-distro login archlinux --user mikey')
 
 🔗"mikey" after alias text is variable you can change it which can be used to login your distribution 
 
-🔗replace "udroid login jammy:xfce4" with your root login id
+🔗replace "udroid login jammy:xfce4"or"proot-distro login archlinux" with your root login id
 
-🔗 replace "mikey" in "su mikey" with your user login id
+🔗 replace "mikey" in "su mikey"or "--user mikey" with your user login id
 
 2)in the last line (cd /home/mikey),
 
@@ -259,28 +273,8 @@ fi
 ```
 source ~/.bashrc
 ```
-**step-4:** run in termux 
 
-**(only for Ubuntu installed through udroid, this path is different for different linux distributions)**
-
-```
-nano /data/data/com.termux/files/usr/var/lib/udroid/installed-filesystems/udroid-jammy-xfce4/udroid_proot_mounts
-```
-add this:
-```
-storage/emulated/0:/storage/emulated/0
-/sdcard:/sdcard
-/data/data/com.termux/files/home:/home/mikey/
-```
-then save it using press "ctrl+x" & "y" and "Enter"
-
-**Give execution permission:**
-
-```
-chmod 644 /data/data/com.termux/files/usr/var/lib/udroid/installed-filesystems/udroid-jammy-xfce4/udroid_proot_mounts
-```
-
-**step-5:** run your distribution through typing alias in termux (which can be edited in first line of step-1) in my case it is:
+**step-4:** run your distribution through typing alias in termux (which can be edited in first line of step-1) in my case it is:
 
 ```
 mikey
