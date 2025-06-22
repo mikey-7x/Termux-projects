@@ -51,6 +51,10 @@ sudo apt update && sudo apt install -y xfce4 dbus-x11 x11-xserver-utils
 ```
 OR for Archlinux:
 ```
+sudo pacman -Syu --noconfirm xfce4 dbus xorg-xhost
+```
+or
+```
 sudo pacman -Syu --noconfirm
 sudo pacman -S --needed xfce4 xfce4-goodies
 ```
