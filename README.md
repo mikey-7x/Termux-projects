@@ -49,7 +49,7 @@ pkg install curl -y
 ```
 sudo apt update && sudo apt install -y xfce4 dbus-x11 x11-xserver-utils
 ```
-OR for Archlinux:
+for Archlinux:
 ```
 sudo pacman -Syu --noconfirm xfce4 dbus xorg-xhost
 ```
