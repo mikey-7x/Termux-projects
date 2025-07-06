@@ -321,6 +321,10 @@ You are free to use, modify, and distribute it with proper attribution.
 
 Developed by **[mikey-7x](https://github.com/mikey-7x)** 🚀🔥  
 
+
+[other repository](https://github.com/mikey-7x?tab=repositories)
+
+
 Thanks to the developers of Termux, Termux-X11, PulseAudio, XFCE4, UDroid, and the open-source Linux community
 
 ---
