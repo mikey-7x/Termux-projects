@@ -69,7 +69,7 @@ su - your_name
 ```
 run 'whoami' if it gives your_name user id successfully maked then run below commands 
 ```
-apt update && apt install -y xfce4 dbus-x11 xfce4-terminal x11-xserver-utils
+apt update && apt install -y xfce4 dbus-x11 xfce4-goodies xfce4-terminal x11-xserver-utils
 ```
 most time sudo not required in root user but if neede simply write sudo after 'apt' command 
 
