@@ -49,6 +49,11 @@ pkg install curl -y
 ```
 sudo apt update && sudo apt install -y xfce4 dbus-x11 x11-xserver-utils
 ```
+many times this command stopped at mid position during installation of 'elementary-xfce-icon-theme'.so,we uninstall this perticular package through 
+```
+dpkg --remove --force-remove-reinstreq elementary-xfce-icon-theme
+```
+
 for Archlinux:
 ```
 sudo pacman -Syu --noconfirm xfce4 dbus xorg-xhost
