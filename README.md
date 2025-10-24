@@ -45,10 +45,34 @@ pkg install curl -y
 ```
 
 **In your Linux distribution (Ubuntu, Kali, etc.):**
+```
+apt update -y
+apt upgrade -y
+apt install sudo nano adduser -y
+```
+```
+adduser your_name
+```
+then it will ask password type it
+```
+nano /etc/sudoers
+```
+then find 'root ALL=(ALL:ALL) ALL'
+BELOW IT TYPE
+```
+YOUR_NAME ALL=(ALL:ALL) ALL
+```
+CTRL+X Y Enter
+then got to your user id through 
+```
+su - your_name
+```
+run 'whoami' if it gives your_name user id successfully maked then run below commands 
+```
+apt update && apt install -y xfce4 dbus-x11 x11-xserver-utils
+```
+most time sudo not required in root user but if neede simply write sudo after 'apt' command 
 
-```
-sudo apt update && sudo apt install -y xfce4 dbus-x11 x11-xserver-utils
-```
 many times this command stopped at mid position during installation of 'elementary-xfce-icon-theme'.so,we uninstall this perticular package through 
 ```
 dpkg --remove --force-remove-reinstreq elementary-xfce-icon-theme
