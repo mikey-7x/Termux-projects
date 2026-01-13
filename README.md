@@ -344,6 +344,212 @@ wget https://raw.githubusercontent.com/mikey-7x/Termux-projects/refs/heads/main/
 
 ```
 ---
+Perfect — now I understand what you want.
+Here is a proper, GitHub-ready README.md with correct Markdown syntax, formatting, headings, tables, and code blocks.
+
+You can copy everything below and save it as README.md in your repository.
+
+
+---
+## **🔥[Project-3]🔥**
+# 🐧 Void Linux Desktop on Android  
+### Termux • proot-distro • XFCE • X11 • Working Audio
+
+> **Author:** mikey-7x  
+> **Platform:** Android (No Root)  
+> **Status:** Stable Desktop + Browser + Audio
+
+---
+
+## 📌 Overview
+
+This project provides a **complete Linux desktop environment on Android** using:
+
+- **Void Linux** (ultra-light, fast, systemd-free)
+- **Termux + proot-distro**
+- **XFCE Desktop**
+- **Termux-X11 real display server**
+- **PulseAudio with real Android sound output**
+
+This is **not** VNC, not emulation, not a fake desktop — it is a real Linux system running inside Android.
+
+---
+
+## ✨ Features
+
+| Feature | Status |
+|-------|--------|
+Void Linux Shell | ✅ Working |
+XFCE Desktop | ✅ Working |
+Hardware Audio | ✅ Working |
+Termux-X11 Display | ✅ Working |
+Falkon Browser + YouTube | ✅ Working |
+Package Manager (xbps) | ✅ Working |
+Non-Root Installation | ✅ Supported |
+Long Sessions Stability | ⚠️ Limited by Android memory |
+
+---
+
+## 🧠 Why Void Linux?
+
+Void Linux is ideal for Android because:
+
+- No **systemd** (avoids proot conflicts)
+- Very low memory usage
+- Extremely fast package manager (`xbps`)
+- Minimal background services
+- Perfect compatibility with Termux environments
+
+---
+
+## 🧰 Requirements
+
+- Android 10+
+- **Termux** from F-Droid
+- **Termux-X11** app
+- Minimum **6 GB RAM recommended**
+- No root required
+
+---
+
+## 🏗 Installation
+
+### 1️⃣ Prepare Termux
+
+```bash
+pkg update -y
+pkg install -y root-repo x11-repo
+pkg install -y proot-distro termux-x11 pulseaudio dbus
+```
+
+---
+
+2️⃣ Install Void Linux
+```
+proot-distro install void
+```
+---
+
+3️⃣ Enter Void Linux
+```
+proot-distro login void
+```
+
+---
+
+4️⃣ Install Desktop & Tools (inside Void)
+```
+xbps-install -Syu
+
+xbps-install -y \
+  xfce4 xfce4-terminal \
+  xorg-minimal xrandr \
+  mesa-dri \
+  dbus-x11 \
+  noto-fonts-ttf dejavu-fonts-ttf liberation-fonts-ttf \
+  fontconfig glibc-locales \
+  pulseaudio pulseaudio-utils \
+  falkon dillo
+```
+Configure Locale
+```
+echo "en_US.UTF-8 UTF-8" >> /etc/default/libc-locales
+xbps-reconfigure -f glibc-locales
+
+echo 'export LANG=en_US.UTF-8' >> /etc/profile
+echo 'export LC_ALL=en_US.UTF-8' >> /etc/profile
+```
+Exit Void:
+```
+exit
+```
+
+---
+
+🖥 GUI + Audio Startup Script
+
+Create the launcher in Termux:
+```
+nano vd.sh
+```
+
+Make executable:
+
+chmod +x vd.sh
+
+---
+
+🚀 Launch Desktop
+
+./vd.sh
+
+Then open the Termux-X11 app.
+
+---
+
+🌐 Browsers
+
+Main browser:
+
+falkon --no-sandbox
+
+Backup lightweight browser:
+
+dillo
+
+
+---
+
+🔊 Audio Architecture
+
+Void Linux → PulseAudio TCP → Termux PulseAudio → Android AAudio → Speaker
+
+This gives real hardware sound inside the Linux desktop.
+
+
+---
+
+⚠️ Known Limitation
+
+Android may kill heavy apps using SIGKILL (signal-9) when memory is low.
+This is a kernel limitation, not a configuration bug.
+
+
+---
+
+🏁 Final Result
+
+You now have a real Linux desktop environment on Android with:
+
+GUI
+
+Browser
+
+Hardware Audio
+
+Package manager
+
+Development tools
+
+
+No root. No VNC. No emulation.
+
+
+---
+
+🧬 Credits
+
+Built & maintained by mikey-7x
+Community-grade Linux on mobile.
+
+---
+
+If you want, next I can help you:
+✔ Add GPU acceleration  
+✔ Optimize memory usage  
+✔ Add game support  
+✔ Package this as a one-command installer
+---
 
 ## **📜License**
 
