@@ -466,17 +466,111 @@ exit
 
 ---
 
+🌐 Installing & Configuring Falkon Browser (Void Linux)
+
+> These steps are done inside Void Linux
+
+
+
+
+---
+
+1️⃣ Install Falkon
+```
+xbps-install -y falkon qt5-wayland qt5-x11extras
+```
+(Those Qt packages prevent crashes and rendering issues.)
+
+
+---
+
+2️⃣ Create Safe Launcher
+
+Falkon cannot run as root unless its sandbox is disabled.
+This wrapper makes Falkon stable on Android.
+```
+nano /usr/local/bin/falkon-safe
+```
+Paste:
+```
+#!/bin/sh
+export QTWEBENGINE_DISABLE_SANDBOX=1
+export QT_XCB_GL_INTEGRATION=none
+falkon "$@"
+```
+Save and exit.
+
+Make executable:
+```
+chmod +x /usr/local/bin/falkon-safe
+```
+
+---
+
+3️⃣ Run Falkon
+```
+falkon-safe
+```
+
+---
+
+🧪 Optional: Desktop Menu Entry
+
+Create desktop launcher:
+```
+nano /usr/share/applications/falkon-safe.desktop
+```
+Paste:
+```
+[Desktop Entry]
+Name=Falkon (Safe)
+Exec=/usr/local/bin/falkon-safe
+Icon=falkon
+Type=Application
+Categories=Network;WebBrowser;
+```
+Update menu:
+```
+update-desktop-database
+```
+Falkon now appears in XFCE menu as "Falkon (Safe)"
+
+
+---
+
+🧠 Why This Works
+
+Setting	Reason
+
+Disable sandbox	Required because proot runs as root
+Disable Qt GL	Prevents GPU crashes on Android
+Qt X11 packages	Prevents blank window / crashes
+
+
+
+---
+
+🟢 Result
+
+Falkon launches reliably
+
+YouTube works
+
+Audio works
+
+No sandbox crash
+
+Maximum stability for Android
+
+---
+
 🖥 GUI + Audio Startup Script
 
 Create the launcher in Termux:
 ```
-nano vd.sh
-```
-
-Make executable:
-
+wget https://raw.githubusercontent.com/mikey-7x/Termux-projects/refs/heads/main/vd.sh
 chmod +x vd.sh
-
+```
 ---
 
 🚀 Launch Desktop
@@ -537,21 +631,10 @@ No root. No VNC. No emulation.
 
 ---
 
-🧬 Credits
-
-Built & maintained by mikey-7x
-Community-grade Linux on mobile.
 
 ---
 
-If you want, next I can help you:
-✔ Add GPU acceleration  
-✔ Optimize memory usage  
-✔ Add game support  
-✔ Package this as a one-command installer
----
-
-## **📜License**
+📜 License
 
 This project is licensed under the 
 [MIT License](LICENSE).
@@ -559,10 +642,12 @@ You are free to use, modify, and distribute it with proper attribution.
 
 ---
 
-## **📜Credits**
+🧬 Credits
 
 Developed by **[mikey-7x](https://github.com/mikey-7x)** 🚀🔥  
 
+Built & maintained by mikey-7x
+Community-grade Linux on mobile.
 
 [other repository](https://github.com/mikey-7x?tab=repositories)
 
