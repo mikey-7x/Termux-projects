@@ -574,9 +574,9 @@ chmod +x vd.sh
 ---
 
 🚀 Launch Desktop
-
+```
 ./vd.sh
-
+```
 Then open the Termux-X11 app.
 
 ---
