@@ -407,7 +407,7 @@ Void Linux is ideal for Android because:
 - Android 10+
 - **Termux** from F-Droid
 - **Termux-X11** app
-- Minimum **6 GB RAM recommended**
+- Minimum **4 GB RAM recommended**
 - No root required
 
 ---
