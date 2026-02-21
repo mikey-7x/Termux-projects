@@ -354,8 +354,8 @@ device_config set_sync_disabled_for_tests persistent
 
 device_config put activity_manager max_phantom_processes 2147483647
 
--you can see this repository 
-[https://github.com/atamshkai/Phantom-Process-Killer/tree/main?tab=readme-ov-file]
+- you can see this repository 
+https://github.com/atamshkai/Phantom-Process-Killer/tree/main?tab=readme-ov-file
 
 ---
 ## **🔥[Project-3]🔥**
