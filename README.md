@@ -344,11 +344,18 @@ wget https://raw.githubusercontent.com/mikey-7x/Termux-projects/refs/heads/main/
 
 ```
 ---
-Perfect — now I understand what you want.
-Here is a proper, GitHub-ready README.md with correct Markdown syntax, formatting, headings, tables, and code blocks.
+💥**DISABLE FANTOM PROCESS IN ANDROID 16**
 
-You can copy everything below and save it as README.md in your repository.
+./adb shell "settings put global settings_enable_monitor_phantom_procs false"
 
+./adb shell "/system/bin/device_config set_sync_disabled_for_tests persistent; /system/bin/device_config put activity_manager max_phantom_processes 2147483647"
+
+device_config set_sync_disabled_for_tests persistent
+
+device_config put activity_manager max_phantom_processes 2147483647
+
+-you can see this repository 
+[https://github.com/atamshkai/Phantom-Process-Killer/tree/main?tab=readme-ov-file]
 
 ---
 ## **🔥[Project-3]🔥**
