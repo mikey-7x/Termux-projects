@@ -357,6 +357,22 @@ device_config put activity_manager max_phantom_processes 2147483647
 - you can see this repository 
 https://github.com/atamshkai/Phantom-Process-Killer/tree/main?tab=readme-ov-file
 
+
+🔸**WORKING mirrors for archlinux in termux**
+
+```
+echo 'Server =http://mirrors.tuna.tsinghua.edu.cn/archlinuxarm/$arch/$repo' > /etc/pacman.d/mirrorlist
+```
+OR
+```
+nano /etc/pacman.d/mirrorlist
+
+```
+```
+Server =
+http://mirror.archlinuxarm.org/$arch/$repo
+```
+
 ---
 ## **🔥[Project-3]🔥**
 # 🐧 Void Linux Desktop on Android  
