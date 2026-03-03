@@ -343,6 +343,19 @@ ln -sf /data/data/com.termux/files/home/storage/shared ~/storage
 wget https://raw.githubusercontent.com/mikey-7x/Termux-projects/refs/heads/main/killp.sh
 
 ```
+## **kill process running in ubuntu** ##
+
+safe:
+```
+wget https://raw.githubusercontent.com/mikey-7x/Termux-projects/refs/heads/main/ukill.sh
+
+```
+hard:
+```
+wget https://raw.githubusercontent.com/mikey-7x/Termux-projects/refs/heads/main/killu.sh
+```
+
+
 ---
 💥**DISABLE FANTOM PROCESS IN ANDROID 16**
 
