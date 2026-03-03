@@ -337,7 +337,7 @@ ln -sf /data/data/com.termux/files/home/storage/shared ~/storage
 **Note:** make sure you can choose any alias for login your id but i put same alias as my login id (which is mikey for my case only) 
 
 ---
-## **🔥[Kill all process of termux safely without harming your other package and directories/files]🔥**
+## **🔥Kill all process of termux safely without harming your other package and directories/files🔥**
 
 ```
 wget https://raw.githubusercontent.com/mikey-7x/Termux-projects/refs/heads/main/killp.sh
