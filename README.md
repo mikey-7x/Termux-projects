@@ -356,7 +356,7 @@ wget https://raw.githubusercontent.com/mikey-7x/Termux-projects/refs/heads/main/
 ```
 ---
 
-# 💥Termux God Mode: Fixing Signal 9 & Phantom Process Errors
+💥**Termux God Mode: Fixing Signal 9 & Phantom Process Errors**
 
 If you are running heavy Linux environments via Termux (like Ubuntu, Arch, or Void Linux) with Termux-X11, Android 12+ will often abruptly kill your sessions. This results in `[Process completed (signal 9) - press Enter]` errors. This is caused by Android's aggressive "Phantom Process Killer" and battery optimization restrictions.
 
