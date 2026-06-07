@@ -354,22 +354,121 @@ hard:
 ```
 wget https://raw.githubusercontent.com/mikey-7x/Termux-projects/refs/heads/main/killu.sh
 ```
+---
 
+# 💥Termux God Mode: Fixing Signal 9 & Phantom Process Errors
+
+If you are running heavy Linux environments via Termux (like Ubuntu, Arch, or Void Linux) with Termux-X11, Android 12+ will often abruptly kill your sessions. This results in `[Process completed (signal 9) - press Enter]` errors. This is caused by Android's aggressive "Phantom Process Killer" and battery optimization restrictions.
+
+This guide provides a complete, device-independent solution using **Shizuku** and **aShell** to disable these restrictions and grant "God Mode" permissions to the entire Termux ecosystem (Termux, Termux-X11, Termux-API, and Termux-GUI).
+
+### 📱 Tested Configuration
+This setup has been verified working on:
+* **Device:** OnePlus 13R (CPH2691)
+* **OS:** OxygenOS 16.0.7.200 (Android 14 Kernel)
+* **Hardware:** Snapdragon 8 Gen 3, 12GB RAM, 256GB ROM
 
 ---
-💥**DISABLE FANTOM PROCESS IN ANDROID 16**
 
-./adb shell "settings put global settings_enable_monitor_phantom_procs false"
+## 🛠️ Prerequisites
 
-./adb shell "/system/bin/device_config set_sync_disabled_for_tests persistent; /system/bin/device_config put activity_manager max_phantom_processes 2147483647"
+You will need to install two applications to execute ADB commands directly on your device without needing a PC.
 
-device_config set_sync_disabled_for_tests persistent
+1. **Shizuku:** Acts as a bridge to grant ADB permissions to on-device apps.
+   * [Download Shizuku from Google Play Store](https://play.google.com/store/apps/details?id=moe.shizuku.privileged.api)
+2. **aShell:** A local ADB shell interface that utilizes Shizuku.
+   * [Download aShell from F-Droid](https://f-droid.org/packages/in.sunilpaulmathew.ashell/)
 
-device_config put activity_manager max_phantom_processes 2147483647
+---
 
-- you can see this repository 
-https://github.com/atamshkai/Phantom-Process-Killer/tree/main?tab=readme-ov-file
+## 🚀 Step 1: Pair and Start Shizuku
 
+Before running the commands, you must start the Shizuku service using Android's Wireless Debugging feature.
+
+1. **Enable Developer Options:** * Go to your phone's **Settings** > **About device** > **Version**.
+   * Tap **Version number** 7 times until it says "You are now a developer."
+2. **Enable Wireless Debugging:**
+   * Go back to **Settings** > **System & update** > **Developer options**.
+   * Toggle on **Wireless debugging** (ensure you are connected to a Wi-Fi network).
+3. **Pair Shizuku:**
+   * Open the **Shizuku** app.
+   * Scroll down to "Start via Wireless debugging" and tap **Pairing**.
+   * Tap **Developer options**, scroll to **Wireless debugging**, and tap the text (not the toggle).
+   * Select **Pair device with pairing code**. A 6-digit code will appear.
+   * Enter this 6-digit code into the Shizuku notification that pops up in your status bar.
+4. **Start the Service:**
+   * Go back to the **Shizuku** app and tap **Start**. The service should now be running.Noe click on **Authorised Application** and turn-on permissions of **ashell** app
+   
+
+---
+
+## 💻 Step 2: Run "God Mode" Commands in aShell
+
+1. Open the **aShell** app.
+2. It will prompt you for Shizuku access. Select **Allow all the time**.
+3. Copy and paste the command blocks below into aShell and press enter.
+
+*(Note: If you prefer to use a PC, you must add `adb shell ` to the beginning of every single command).*
+
+### 1. Disable Phantom Process Killer & Freezer
+This stops Android from limiting child processes to 32, allowing heavy desktop environments to run flawlessly.
+
+```bash
+/system/bin/device_config set_sync_disabled_for_tests persistent
+/system/bin/device_config put activity_manager max_phantom_processes 2147483647
+/system/bin/device_config put activity_manager settings_use_freezer false
+
+```
+*Note: If you have a "Disable child process restrictions" toggle in your Developer Options, turn that on as well.*
+### 2. Whitelist from Battery Doze / Device Idle
+Prevents Android's battery manager from putting Termux apps to sleep when running in the background.
+```bash
+dumpsys deviceidle whitelist +com.termux
+dumpsys deviceidle whitelist +com.termux.x11
+dumpsys deviceidle whitelist +com.termux.api
+dumpsys deviceidle whitelist +com.termux.gui
+
+```
+### 3. Grant Unrestricted Storage Access
+Allows the Termux ecosystem to manage files freely without Android's Scoped Storage interference.
+```bash
+appops set com.termux MANAGE_EXTERNAL_STORAGE allow
+appops set com.termux.x11 MANAGE_EXTERNAL_STORAGE allow
+appops set com.termux.api MANAGE_EXTERNAL_STORAGE allow
+appops set com.termux.gui MANAGE_EXTERNAL_STORAGE allow
+
+```
+### 4. Allow "Display Over Other Apps"
+Crucial for Termux-X11 and GUI components to render properly over Android.
+```bash
+appops set com.termux SYSTEM_ALERT_WINDOW allow
+appops set com.termux.x11 SYSTEM_ALERT_WINDOW allow
+appops set com.termux.api SYSTEM_ALERT_WINDOW allow
+appops set com.termux.gui SYSTEM_ALERT_WINDOW allow
+
+```
+### 5. Advanced Permissions (Notifications, Dump, Usage Stats)
+Grants all necessary underlying permissions required for Termux APIs to interact securely with the Android OS.
+```bash
+pm grant com.termux android.permission.WRITE_SECURE_SETTINGS
+pm grant com.termux.api android.permission.WRITE_SECURE_SETTINGS
+
+pm grant com.termux android.permission.DUMP
+pm grant com.termux.api android.permission.DUMP
+
+pm grant com.termux android.permission.PACKAGE_USAGE_STATS
+pm grant com.termux.api android.permission.PACKAGE_USAGE_STATS
+
+pm grant com.termux android.permission.POST_NOTIFICATIONS
+pm grant com.termux.x11 android.permission.POST_NOTIFICATIONS
+pm grant com.termux.api android.permission.POST_NOTIFICATIONS
+pm grant com.termux.gui android.permission.POST_NOTIFICATIONS
+
+```
+## ✅ Verification
+Once all commands are run successfully via aShell, restart your device (optional but recommended to ensure device_config sticks). You can now launch Termux, boot your Linux container, and fire up Termux-X11 without worrying about random crashes or Signal 9 kills!
+
+---
 
 🔸**WORKING mirrors for archlinux in termux**
 
