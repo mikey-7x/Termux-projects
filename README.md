@@ -415,55 +415,89 @@ This stops Android from limiting child processes to 32, allowing heavy desktop e
 
 ```bash
 /system/bin/device_config set_sync_disabled_for_tests persistent
-/system/bin/device_config put activity_manager max_phantom_processes 2147483647
-/system/bin/device_config put activity_manager settings_use_freezer false
-
+/system/bin/device_config put
 ```
+```
+activity_manager max_phantom_processes 2147483647
+```
+```
+/system/bin/device_config put activity_manager settings_use_freezer false
+```
+
 *Note: If you have a "Disable child process restrictions" toggle in your Developer Options, turn that on as well.*
 ### 2. Whitelist from Battery Doze / Device Idle
 Prevents Android's battery manager from putting Termux apps to sleep when running in the background.
 ```bash
 dumpsys deviceidle whitelist +com.termux
+```
+```
 dumpsys deviceidle whitelist +com.termux.x11
+```
+```
 dumpsys deviceidle whitelist +com.termux.api
+```
+```
 dumpsys deviceidle whitelist +com.termux.gui
-
 ```
 ### 3. Grant Unrestricted Storage Access
 Allows the Termux ecosystem to manage files freely without Android's Scoped Storage interference.
 ```bash
 appops set com.termux MANAGE_EXTERNAL_STORAGE allow
+```
+```
 appops set com.termux.x11 MANAGE_EXTERNAL_STORAGE allow
+```
+```
 appops set com.termux.api MANAGE_EXTERNAL_STORAGE allow
+```
+```
 appops set com.termux.gui MANAGE_EXTERNAL_STORAGE allow
-
 ```
 ### 4. Allow "Display Over Other Apps"
 Crucial for Termux-X11 and GUI components to render properly over Android.
 ```bash
 appops set com.termux SYSTEM_ALERT_WINDOW allow
+```
+```
 appops set com.termux.x11 SYSTEM_ALERT_WINDOW allow
+```
+```
 appops set com.termux.api SYSTEM_ALERT_WINDOW allow
+```
+```
 appops set com.termux.gui SYSTEM_ALERT_WINDOW allow
-
 ```
 ### 5. Advanced Permissions (Notifications, Dump, Usage Stats)
 Grants all necessary underlying permissions required for Termux APIs to interact securely with the Android OS.
 ```bash
 pm grant com.termux android.permission.WRITE_SECURE_SETTINGS
+```
+```
 pm grant com.termux.api android.permission.WRITE_SECURE_SETTINGS
-
+```
+```
 pm grant com.termux android.permission.DUMP
+```
+```
 pm grant com.termux.api android.permission.DUMP
-
+```
+```
 pm grant com.termux android.permission.PACKAGE_USAGE_STATS
+```
+```
 pm grant com.termux.api android.permission.PACKAGE_USAGE_STATS
-
+```
+```
 pm grant com.termux android.permission.POST_NOTIFICATIONS
+```
+```
 pm grant com.termux.x11 android.permission.POST_NOTIFICATIONS
+```
+```
 pm grant com.termux.api android.permission.POST_NOTIFICATIONS
+```
+```
 pm grant com.termux.gui android.permission.POST_NOTIFICATIONS
-
 ```
 ## ✅ Verification
 Once all commands are run successfully via aShell, restart your device (optional but recommended to ensure device_config sticks). You can now launch Termux, boot your Linux container, and fire up Termux-X11 without worrying about random crashes or Signal 9 kills!
