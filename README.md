@@ -499,7 +499,7 @@ pm grant com.termux.api android.permission.POST_NOTIFICATIONS
 pm grant com.termux.gui android.permission.POST_NOTIFICATIONS
 ```
 ## ✅ Verification
-Once all commands are run successfully via aShell, restart your device (optional but recommended to ensure device_config sticks). You can now launch Termux, boot your Linux container, and fire up Termux-X11 without worrying about random crashes or Signal 9 kills!
+Once all commands are run successfully via aShell,(Don't restart the device because every restart the phantom process reset it's default value) You can now launch Termux, boot your Linux container, and fire up Termux-X11 without worrying about random crashes or Signal 9 kills!
 
 ---
 
