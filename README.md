@@ -356,7 +356,7 @@ wget https://raw.githubusercontent.com/mikey-7x/Termux-projects/refs/heads/main/
 ```
 ---
 
-💥**Termux God Mode: Fixing Signal 9 & Phantom Process Errors**
+💥**Termux extreme Mode: Fixing Signal 9 & Phantom Process Errors**
 
 If you are running heavy Linux environments via Termux (like Ubuntu, Arch, or Void Linux) with Termux-X11, Android 12+ will often abruptly kill your sessions. This results in `[Process completed (signal 9) - press Enter]` errors. This is caused by Android's aggressive "Phantom Process Killer" and battery optimization restrictions.
 
@@ -402,7 +402,7 @@ Before running the commands, you must start the Shizuku service using Android's 
 
 ---
 
-## 💻 Step 2: Run "God Mode" Commands in aShell
+## 💻 Step 2: Run "extreme Mode" Commands in aShell
 
 1. Open the **aShell** app.
 2. It will prompt you for Shizuku access. Select **Allow all the time**.
