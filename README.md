@@ -462,6 +462,25 @@ dumpsys deviceidle whitelist +com.termux.api
 ```
 dumpsys deviceidle whitelist +com.termux.gui
 ```
+
+Grant Unrestricted Background & Overlay Permissions:
+```
+appops set com.termux RUN_ANY_IN_BACKGROUND allow
+```
+```
+appops set com.termux RUN_IN_BACKGROUND allow
+```
+```
+appops set com.termux SYSTEM_ALERT_WINDOW allow
+```
+```
+appops set com.termux.x11 SYSTEM_ALERT_WINDOW allow
+```
+```
+appops set com.termux MANAGE_EXTERNAL_STORAGE allow
+```
+
+
 ### 3. Grant Unrestricted Storage Access
 Allows the Termux ecosystem to manage files freely without Android's Scoped Storage interference.
 ```bash
