@@ -380,6 +380,11 @@ You will need to install two applications to execute ADB commands directly on yo
    * [Download aShell from F-Droid](https://f-droid.org/packages/in.sunilpaulmathew.ashell/)
 
 ---
+some important links:
+
+[](https://saicharankandukuri.github.io/posts/termux-signal9-fix/)
+
+---
 
 ## 🚀 Step 1: Pair and Start Shizuku
 
