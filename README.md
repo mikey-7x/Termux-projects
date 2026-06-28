@@ -382,7 +382,7 @@ You will need to install two applications to execute ADB commands directly on yo
 ---
 some important links:
 
-[](https://saicharankandukuri.github.io/posts/termux-signal9-fix/)
+[saicharankandukuri](https://saicharankandukuri.github.io/posts/termux-signal9-fix/)
 
 ---
 
