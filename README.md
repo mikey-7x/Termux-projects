@@ -500,6 +500,10 @@ appops set com.termux.api MANAGE_EXTERNAL_STORAGE allow
 ```
 appops set com.termux.gui MANAGE_EXTERNAL_STORAGE allow
 ```
+```
+pm grant com.termux.x11 android.permission.WRITE_SECURE_SETTINGS
+```
+
 ### 4. Allow "Display Over Other Apps"
 Crucial for Termux-X11 and GUI components to render properly over Android.
 ```bash
