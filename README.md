@@ -453,6 +453,11 @@ settings get global settings_enable_monitor_phantom_procs
 ```
 Note for Android 12/13/14: These settings can sometimes reset when you reboot your phone or install a system update. If your games start mysteriously crashing again, just open aShell and run these commands one more time.
 
+disable the Cached Apps Freezer globally, which is a separate system from the Phantom Process Killer:
+```
+device_config put activity_manager_native_boot use_freezer false
+```
+
 ### 2. Whitelist from Battery Doze / Device Idle
 Prevents Android's battery manager from putting Termux apps to sleep when running in the background.
 ```bash
