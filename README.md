@@ -457,6 +457,11 @@ disable the Cached Apps Freezer globally, which is a separate system from the Ph
 ```
 device_config put activity_manager_native_boot use_freezer false
 ```
+to verify:
+```
+device_config get activity_manager_native_boot use_freezer
+```
+It should output false.
 
 ### 2. Whitelist from Battery Doze / Device Idle
 Prevents Android's battery manager from putting Termux apps to sleep when running in the background.
