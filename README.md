@@ -466,8 +466,8 @@ dumpsys deviceidle whitelist +com.termux.api
 dumpsys deviceidle whitelist +com.termux.gui
 ```
 
-# Adjust Out-Of-Memory priority score (Lower number = Protected from system kill)
-# Note: This acts as a hint for the active running session
+Adjust Out-Of-Memory priority score (Lower number = Protected from system kill)
+Note: This acts as a hint for the active running session
 ```
 am set-inactive com.termux false
 ```
