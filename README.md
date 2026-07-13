@@ -425,7 +425,7 @@ This stops Android from limiting child processes to 32, allowing heavy desktop e
 /system/bin/device_config put activity_manager max_phantom_processes 2147483647
 ```
 ```
-/system/bin/device_config put activity_manager settings_use_freezer false
+/system/bin/device_config put activity_manager_native_boot use_freezer false
 ```
 ```
 settings put global max_phantom_processes 2147483647
@@ -435,6 +435,9 @@ settings put global activity_manager_constants max_cached_processes=1024
 ```
 ```
 settings put global settings_enable_monitor_phantom_procs false
+```
+```
+device_config put activity_manager_native_boot use_freezer false
 ```
 Note for Android 12/13/14: These settings can sometimes reset when you reboot your phone or install a system update. If your games start mysteriously crashing again, just open aShell and run these commands one more time.
 
@@ -448,7 +451,7 @@ device_config get activity_manager_native_boot use_freezer
 ```
 It should output false.
 
-### 2. Whitelist from Battery Doze / Device Idle
+### 2. Prevent OxygenOS / Android OOM Eviction (Whitelist from Battery Doze / Device Idle)
 Prevents Android's battery manager from putting Termux apps to sleep when running in the background.
 ```bash
 dumpsys deviceidle whitelist +com.termux
@@ -463,12 +466,27 @@ dumpsys deviceidle whitelist +com.termux.api
 dumpsys deviceidle whitelist +com.termux.gui
 ```
 
+# Adjust Out-Of-Memory priority score (Lower number = Protected from system kill)
+# Note: This acts as a hint for the active running session
+```
+am set-inactive com.termux false
+```
+```
+am set-inactive com.termux.x11 false
+```
+
 Grant Unrestricted Background & Overlay Permissions:
 ```
 appops set com.termux RUN_ANY_IN_BACKGROUND allow
 ```
 ```
+appops set com.termux.x11 RUN_ANY_IN_BACKGROUND allow
+```
+```
 appops set com.termux RUN_IN_BACKGROUND allow
+```
+```
+appops set com.termux.x11 RUN_IN_BACKGROUND allow
 ```
 ```
 appops set com.termux SYSTEM_ALERT_WINDOW allow
@@ -479,7 +497,9 @@ appops set com.termux.x11 SYSTEM_ALERT_WINDOW allow
 ```
 appops set com.termux MANAGE_EXTERNAL_STORAGE allow
 ```
-
+```
+appops set com.termux.x11 MANAGE_EXTERNAL_STORAGE allow
+```
 
 ### 3. Grant Unrestricted Storage Access
 Allows the Termux ecosystem to manage files freely without Android's Scoped Storage interference.
@@ -524,28 +544,47 @@ pm grant com.termux android.permission.WRITE_EXTERNAL_STORAGE
 ```
 
 ### 5. Advanced Permissions (Notifications, Dump, Usage Stats)
-Grants all necessary underlying permissions required for Termux APIs to interact securely with the Android OS.
+Grant Low-Latency Display & System Call Permissions.
 ```bash
 pm grant com.termux android.permission.WRITE_SECURE_SETTINGS
 ```
 ```
+pm grant com.termux.x11 android.permission.WRITE_SECURE_SETTINGS
+```
+```
 pm grant com.termux.api android.permission.WRITE_SECURE_SETTINGS
 ```
+
 ```
 pm grant com.termux android.permission.DUMP
 ```
 ```
-pm grant com.termux android.permission.READ_LOGS
+pm grant com.termux.x11 android.permission.DUMP
 ```
 ```
 pm grant com.termux.api android.permission.DUMP
 ```
+
+```
+pm grant com.termux android.permission.READ_LOGS
+```
+```
+pm grant com.termux.x11 android.permission.READ_LOGS
+```
+```
+pm grant com.termux.api android.permission.READ_LOGS
+```
+
 ```
 pm grant com.termux android.permission.PACKAGE_USAGE_STATS
 ```
 ```
+pm grant com.termux.x11 android.permission.PACKAGE_USAGE_STATS
+```
+```
 pm grant com.termux.api android.permission.PACKAGE_USAGE_STATS
 ```
+
 ```
 pm grant com.termux android.permission.POST_NOTIFICATIONS
 ```
