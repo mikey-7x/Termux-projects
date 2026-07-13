@@ -422,6 +422,9 @@ This stops Android from limiting child processes to 32, allowing heavy desktop e
 /system/bin/device_config set_sync_disabled_for_tests persistent
 ```
 ```
+settings put global max_phantom_processes 2147483647
+```
+```
 /system/bin/device_config put activity_manager max_phantom_processes 2147483647
 ```
 To verify the limit was successfully changed, run:
