@@ -422,47 +422,23 @@ This stops Android from limiting child processes to 32, allowing heavy desktop e
 /system/bin/device_config set_sync_disabled_for_tests persistent
 ```
 ```
-settings put global max_phantom_processes 2147483647
-```
-```
 /system/bin/device_config put activity_manager max_phantom_processes 2147483647
 ```
-To verify the limit was successfully changed, run:
-```
-adb shell "/system/bin/dumpsys activity settings | grep max_phantom_processes"
-```
-It should return max_phantom_processes=2147483647
-
 ```
 /system/bin/device_config put activity_manager settings_use_freezer false
 ```
-
-*Note: If you have a "Disable child process restrictions" toggle in your Developer Options, turn that on as well.*
-
-OR
-
-​Step 1: Disable the process limit
 ```
-device_config put activity_manager max_phantom_processes 2147483647
+settings put global max_phantom_processes 2147483647
 ```
-Step 2: Disable the background monitor
+```
+settings put global activity_manager_constants max_cached_processes=1024
+```
 ```
 settings put global settings_enable_monitor_phantom_procs false
 ```
-How to verify it worked
-​To ensure the system accepted the changes, you can run these two commands.
-
-​Check the process limit (it should return 2147483647):
-```
-device_config get activity_manager max_phantom_processes
-```
-Check the monitor status (it should return false):
-```
-settings get global settings_enable_monitor_phantom_procs
-```
 Note for Android 12/13/14: These settings can sometimes reset when you reboot your phone or install a system update. If your games start mysteriously crashing again, just open aShell and run these commands one more time.
 
-disable the Cached Apps Freezer globally, which is a separate system from the Phantom Process Killer:
+🔸disable the Cached Apps Freezer globally, which is a separate system from the Phantom Process Killer:
 ```
 device_config put activity_manager_native_boot use_freezer false
 ```
