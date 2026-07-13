@@ -424,6 +424,12 @@ This stops Android from limiting child processes to 32, allowing heavy desktop e
 ```
 /system/bin/device_config put activity_manager max_phantom_processes 2147483647
 ```
+To verify the limit was successfully changed, run:
+```
+adb shell "/system/bin/dumpsys activity settings | grep max_phantom_processes"
+```
+It should return max_phantom_processes=2147483647
+
 ```
 /system/bin/device_config put activity_manager settings_use_freezer false
 ```
@@ -528,6 +534,16 @@ appops set com.termux.api SYSTEM_ALERT_WINDOW allow
 ```
 appops set com.termux.gui SYSTEM_ALERT_WINDOW allow
 ```
+```
+appops set --user 0 com.termux SYSTEM_ALERT_WINDOW allow
+```
+```
+pm grant com.termux android.permission.READ_EXTERNAL_STORAGE
+```
+```
+pm grant com.termux android.permission.WRITE_EXTERNAL_STORAGE
+```
+
 ### 5. Advanced Permissions (Notifications, Dump, Usage Stats)
 Grants all necessary underlying permissions required for Termux APIs to interact securely with the Android OS.
 ```bash
@@ -538,6 +554,9 @@ pm grant com.termux.api android.permission.WRITE_SECURE_SETTINGS
 ```
 ```
 pm grant com.termux android.permission.DUMP
+```
+```
+pm grant com.termux android.permission.READ_LOGS
 ```
 ```
 pm grant com.termux.api android.permission.DUMP
