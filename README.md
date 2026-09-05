@@ -483,12 +483,6 @@ appops set com.termux RUN_ANY_IN_BACKGROUND allow
 appops set com.termux.x11 RUN_ANY_IN_BACKGROUND allow
 ```
 ```
-appops set com.termux RUN_IN_BACKGROUND allow
-```
-```
-appops set com.termux.x11 RUN_IN_BACKGROUND allow
-```
-```
 appops set com.termux SYSTEM_ALERT_WINDOW allow
 ```
 ```
