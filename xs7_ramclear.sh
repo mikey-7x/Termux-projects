@@ -5,7 +5,8 @@
 # Author    : mikey-7x (https://github.com/mikey-7x)
 # Target    : OnePlus 13R (CPH2691) & Android 12+ Devices (via aShell/ADB)
 # Purpose   : Frees up to 6.3+ GB RAM for xs-7 & alfa5 XFCE4 desktop while
-#             strictly preserving Termux, Termux:X11, Termux:API & Shizuku.
+#             preserving Termux, Termux:X11, Termux:API, Shizuku, Gemini,
+#             and WhatsApp push notifications.
 # Execution : sh /storage/emulated/0/xs7-ramclear.sh
 # =========================================================================
 
@@ -22,20 +23,21 @@ for sys_pkg in com.google.android.aicore com.facebook.services com.facebook.syst
   am force-stop "$sys_pkg" >/dev/null 2>&1;
 done;
 
-echo "== [3/4] LOCKING & STOPPING ALL 3RD-PARTY BACKGROUND APPS ==";
+echo "== [3/4] PROTECTING WHATSAPP & GEMINI NOTIFICATIONS, STOPPING OTHER APPS ==";
+for keep_pkg in com.whatsapp com.whatsapp.w4b com.google.android.apps.bard com.google.android.googlequicksearchbox com.google.android.gm org.telegram.messenger; do
+  cmd appops set "$keep_pkg" RUN_IN_BACKGROUND allow >/dev/null 2>&1;
+  cmd appops set "$keep_pkg" RUN_ANY_IN_BACKGROUND allow >/dev/null 2>&1;
+  cmd appops set "$keep_pkg" WAKE_LOCK allow >/dev/null 2>&1;
+done;
+
 for pkg in $(pm list packages -3 2>/dev/null | cut -d: -f2); do
   case "$pkg" in
-    com.termux*|in.sunilpaulmathew.ashell*|moe.shizuku.privileged.api*) continue ;;
+    com.termux*|in.sunilpaulmathew.ashell*|moe.shizuku.privileged.api*|com.whatsapp*|com.google.android.apps.bard*) continue ;;
   esac;
-  cmd appops set "$pkg" RUN_IN_BACKGROUND ignore >/dev/null 2>&1;
-  cmd appops set "$pkg" RUN_ANY_IN_BACKGROUND ignore >/dev/null 2>&1;
-  cmd appops set "$pkg" WAKE_LOCK ignore >/dev/null 2>&1;
   am force-stop "$pkg" >/dev/null 2>&1;
 done;
 
-for gpkg in com.google.android.youtube com.google.android.apps.photos com.google.android.apps.maps com.google.android.apps.docs com.google.android.gm com.google.android.googlequicksearchbox com.android.chrome com.google.android.videos com.google.android.music; do
-  cmd appops set "$gpkg" RUN_IN_BACKGROUND ignore >/dev/null 2>&1;
-  cmd appops set "$gpkg" RUN_ANY_IN_BACKGROUND ignore >/dev/null 2>&1;
+for gpkg in com.google.android.youtube com.google.android.apps.photos com.google.android.apps.maps com.google.android.apps.docs com.android.chrome com.google.android.videos com.google.android.music; do
   am force-stop "$gpkg" >/dev/null 2>&1;
 done;
 
