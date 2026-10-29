@@ -1055,7 +1055,7 @@ When you only tap **"Disable"** on a system app in Android Settings, Android lea
 
 ### What Is Preserved (100% Zero-Misbehavior Guarantee):
 The safe list **never touches**:
-- **Social & Daily Apps:** Facebook (`com.facebook.katana`), Instagram (`com.instagram.android`), WhatsApp, Telegram, LinkedIn, Opera, Chrome
+- **Social & Daily Apps:** Facebook (`com.facebook.katana`), Instagram (`com.instagram.android`), WhatsApp, Telegram, LinkedIn, Opera, Chrome, **Google Gemini (`com.google.android.apps.bard`)**
 - **Payments & India Gov Apps:** GPay, Paytm, DigiLocker
 - **Hardware & OS Features:** Gboard + **Voice Typing (`com.google.android.tts`)**, **Wireless Earphones (`com.oplus.melody`)**, **App Cloner / System Cloner (`com.oplus.multiapp`)**, **OnePlus Share (`com.coloros.oshare`)**, **Android System Intelligence (`com.google.android.as`)**, System Launcher, Android System WebView, DocumentsUI File Picker, microG Services, RVX, and Termux.
 
@@ -1075,7 +1075,6 @@ com.google.android.apps.restore
 com.google.android.safetycore
 com.google.android.aicore
 com.google.android.apps.wellbeing
-com.google.android.apps.bard
 com.heytap.quicksearchbox
 com.oplus.dmp
 com.google.ar.core

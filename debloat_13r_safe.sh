@@ -22,7 +22,6 @@ com.google.android.apps.restore
 com.google.android.safetycore
 com.google.android.aicore
 com.google.android.apps.wellbeing
-com.google.android.apps.bard
 com.heytap.quicksearchbox
 com.oplus.dmp
 com.google.ar.core
