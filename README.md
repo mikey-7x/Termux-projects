@@ -475,10 +475,14 @@ That is caused by four independent Android mechanisms working against you:
 
 | Mechanism | What it does & How Safe Extreme Mode handles it |
 |-----------|-------------------------------------------------|
-| **Phantom Process Killer (PPK)** | Android 12+ limits background child processes (default cap: 32) and kills the excess — this is the #1 cause of Signal 9 for proot. **Fix:** Disabled persistently (`max_phantom_processes = 2147483647`). |
-| **Cached-apps freezer** | A kernel cgroup-v2 freezer that suspends cached background apps. **Important Architectural Fix:** Keep `use_freezer` set to **`true`** (`enabled`) globally so background RAM hogs (Facebook, Instagram, Telegram, WhatsApp, Opera) freeze at `0%` CPU, while exempting **Termux / Termux:X11 / Termux:API** via Doze Whitelist + `RUN_ANY_IN_BACKGROUND allow` + `termux-wake-lock`! |
-| **Doze / Device Idle** | The battery manager throttles background work and network. **Fix:** Whitelist `com.termux`, `com.termux.x11`, and `com.termux.api`. |
-| **OOM killer (LMK)** | When RAM is tight the kernel kills the largest consumer. **Fix:** Pair with `xs7_ramclear.sh` to free **6.0–6.4+ GB RAM** before launching heavy desktops or Windows games. |
+| **Phantom Process Killer (PPK)** | Android 12+ limits background child processes (default cap: 32) and kills the excess — this is the #1 cause of Signal 9 for proot. 
+**Fix:** Disabled persistently (`max_phantom_processes = 2147483647`). |
+| **Cached-apps freezer** | A kernel cgroup-v2 freezer that suspends cached background apps. 
+**Important Architectural Fix:** Keep `use_freezer` set to **`true`** (`enabled`) globally so background RAM hogs (Facebook, Instagram, Telegram, WhatsApp, Opera) freeze at `0%` CPU, while exempting **Termux / Termux:X11 / Termux:API** via Doze Whitelist + `RUN_ANY_IN_BACKGROUND allow` + `termux-wake-lock`! |
+| **Doze / Device Idle** | The battery manager throttles background work and network. 
+**Fix:** Whitelist `com.termux`, `com.termux.x11`, and `com.termux.api`. |
+| **OOM killer (LMK)** | When RAM is tight the kernel kills the largest consumer. 
+**Fix:** Pair with `xs7_ramclear.sh` to free **6.0–6.4+ GB RAM** before launching heavy desktops or Windows games. |
 
 > ### 🧠 Why `use_freezer` Must Be `true` (Enabled) Instead of `false`
 > Earlier revisions set `/system/bin/device_config put activity_manager_native_boot use_freezer false` (which flips **Developer Options → "Suspend execution for cached apps"** to **Disabled**).
